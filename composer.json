@@ -1,0 +1,57 @@
+{
+	"name": "devdesigns/acf-hero-section",
+	"description": "Customizable ACF Hero section.",
+	"type": "wordpress-plugin",
+	"homepage": "https://developingdesigns.com/",
+	"license": "GPL-3.0-only",
+	"authors": [
+		{
+			"name": "Joe Dooley",
+			"email": "hello@developingdesigns.com",
+			"homepage": "https://twitter.com/devdesignstampa/",
+			"role": "Developer"
+		},
+		{
+			"name": "Developing Designs",
+			"email": "hello@developingdesigns.com",
+			"homepage": "https://developingdesigns.com/",
+			"role": "Company"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
+	"require-dev": {
+		"kint-php/kint": "^3.2"
+	},
+	"require": {
+		"php": "^7.3",
+		"composer/installers": "~1.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"DevDesigns\\AcfHeroSection\\": "src/"
+		},
+		"files": ["src/setup.php", "src/Acf/acf.php"]
+	},
+	"extra": {
+		"installer-paths": {
+			"../../plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"../../mu-plugins/{$name}/": [
+				"type:wordpress-muplugin"
+			]
+		}
+	}
+}

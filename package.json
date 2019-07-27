@@ -1,0 +1,27 @@
+{
+	"name": "acf-hero-section",
+	"version": "1.0.0",
+	"description": "Customizable ACF Hero section.",
+	"main": "index.js",
+	"author": "Joe Dooley <hello@developingdesigns.com> (https://developingdesigns.com/)",
+	"private": true,
+	"license": "GPL-3.0+",
+	"scripts": {
+		"dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"composer": "composer install",
+		"postinstall": "npm run composer & npm run watch"
+	},
+	"dependencies": {
+		"jquery-backstretch": "^2.1.17"
+	},
+	"devDependencies": {
+		"laravel-mix": "^4.0.15",
+		"resolve-url-loader": "^2.3.1",
+		"sass": "^1.17.3",
+		"sass-loader": "^7.1.0",
+		"vue-template-compiler": "^2.6.10"
+	}
+}
