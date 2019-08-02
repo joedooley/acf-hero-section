@@ -37,6 +37,10 @@ add_filter( 'acf/settings/load_json', function ( array $paths ): array {
  * @since 1.0.0
  */
 add_action( 'genesis_after_header', function (): void {
+	if ( ! is_page_template( 'template-sales.php' ) ) {
+		return;
+	}
+
 	$hero = get_field( 'hero' );
 
 	$bgType = $hero['background_type'];
