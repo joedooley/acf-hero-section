@@ -1,40 +1,29 @@
+$white: #fff;
+
 .acf-hero {
+	align-items: center;
 	background-position: center;
 	background-size: cover;
-	max-width: 100%;
-	padding: 50px 30px;
+	display: flex;
+	justify-content: center;
+	padding: 100px 10px 80px;
+	text-align: center;
+
+	@media only screen and (min-width: 601px) {
+		padding: 100px 30px 80px;
+	}
 
 	.wrap {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 		margin: 0 auto;
-		max-width: 1280px;
+
+		@media only screen and (min-width: 961px) {
+			max-width: 1280px;
+		}
 	}
 
 	.overlay {
 		max-width: 720px;
-		padding: 40px;
-
-		@media only screen and (min-width: 961px) and (max-width: 1280px) {
-			margin-top: 200px;
-		}
-
-		.button-wrap {
-			margin-bottom: 0;
-			text-align: center;
-
-			@media only screen and (min-width: 600px) {
-				text-align: inherit;
-			}
-
-			a {
-				margin-top: 3em;
-				padding-bottom: 15px;
-				padding-top: 15px;
-			}
-		}
+		padding: 0 30px;
 	}
 
 	header {
@@ -42,15 +31,49 @@
 
 		h2 {
 			color: $white;
+			font-size: 25px;
+			letter-spacing: 0.43px;
+			margin-bottom: 20px;
 			margin-top: 0;
 		}
 
+		h3 {
+			color: $white;
+			font-size: 22px;
+			letter-spacing: 0.31px;
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+	}
+
+	.description {
 		p {
 			color: $white;
 
 			&:last-child {
 				margin-bottom: 0;
 			}
+		}
+	}
+
+	.button-wrap {
+		margin-bottom: 0;
+		margin-top: 0;
+		text-align: center;
+
+		@media only screen and (min-width: 600px) {
+			text-align: inherit;
+		}
+
+		a {
+			border-radius: 7px;
+			color: $white;
+			font-size: 15px;
+			font-weight: bold;
+			letter-spacing: 0.22px;
+			text-transform: capitalize;
+			padding: 15px 20px;
+			text-decoration: none;
 		}
 	}
 }

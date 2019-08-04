@@ -56,6 +56,8 @@ add_action( 'genesis_after_header', function (): void {
 	$addOverlay = $hero['add_overlay'];
 
 	$heading = $hero['heading'] ?? '';
+	$subheading = $hero['subheading'] ?? '';
+
 	$description = $hero['description'] ?? '';
 
 	$addCta = $hero['add_cta'];
@@ -64,14 +66,17 @@ add_action( 'genesis_after_header', function (): void {
 	$buttonLink = $hero['cta_group']['link']['url'] ?? '';
 	$buttonTarget = $hero['cta_group']['link']['target'] ?: '_self';
 	$buttonColor = $hero['cta_group']['color'] ?? '';
-	$button = sprintf( "<a href='%s' class='button-red' target='%s'>%s</a>",
+	$button = sprintf( "<a href='%s' target='%s'>%s</a>",
 		esc_url( $buttonLink ),
 		esc_attr( $buttonTarget ),
 		esc_html( $buttonLabel )
 	);
 
-	$headingColor = $hero['heading_color'] ?? '#fff';
-	$headingFontSize = $hero['heading_font_size'] ?? '30px';
+	$headingColor = $hero['heading_color'] ?? '';
+	$headingFontSize = $hero['heading_font_size'] ?? '';
+
+	$subheadingColor = $hero['subheading_color'] ?? '';
+	$subheadingFontSize = $hero['subheading_font_size'] ?? '';
 
 	$addOverlayBg = $hero['add_background_color_to_overlay'];
 	$overlayBg = $hero['overlay_background_color'];
@@ -87,12 +92,6 @@ add_action( 'genesis_after_header', function (): void {
 			border-radius: {$overlayBorderRadius};
 			opacity: {$overlayOpacity}
 		}
-		
-		@media screen and (min-width: 60em) {
-			.acf-hero .overlay {
-				
-			}
-		}
 CSS;
 
 	$includeOverlayCss = $addOverlayBg ? $overlayCss : '';
@@ -100,7 +99,6 @@ CSS;
 	$inlineCss = <<<CSS
 		.acf-hero {
 			background: {$bg};
-			text-align: left;
 			{$heroHeight}
 		}
 		
@@ -108,6 +106,10 @@ CSS;
 		
 		.acf-hero header h2 {
 			color: {$headingColor};
+		}
+				
+		.acf-hero header h3 {
+			color: {$subheadingColor};
 		}
 		
 		.acf-hero .button-wrap a {
@@ -122,6 +124,10 @@ CSS;
 			
 			.acf-hero header h2 {
 			    font-size: {$headingFontSize};
+			}
+						
+			.acf-hero header h3 {
+			    font-size: {$subheadingFontSize};
 			}
 		}
 CSS;
@@ -143,14 +149,21 @@ CSS;
 						<?php if ( $heading ): ?>
 							<h2><?php echo $heading ?></h2>
 						<?php endif; ?>
+						<?php if ( $subheading ): ?>
+							<h3><?php echo $subheading ?></h3>
+						<?php endif; ?>
+					</header>
+					<div class="description">
 						<?php if ( $description ): ?>
 							<?php echo $description ?>
 						<?php endif; ?>
-					</header>
+					</div>
 					<?php if ( $addCta && $button ): ?>
-						<p class="button-wrap">
-							<?php echo $button ?>
-						</p>
+						<div class="entry-footer">
+							<p class="button-wrap">
+								<?php echo $button ?>
+							</p>
+						</div>
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>
