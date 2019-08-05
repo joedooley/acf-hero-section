@@ -5,33 +5,6 @@ namespace DevDesigns\AcfHeroSection;
 
 
 /**
- * Set ACF local JSON save directory.
- *
- * @since  1.0.0
- *
- * @param  string $path ACF local JSON save directory.
- */
-add_filter( 'acf/settings/save_json', function ( string $path ): string {
-	return ACF_HERO_SECTION_PATH . 'acf-json';
-} );
-
-
-/**
- * Set ACF local JSON load directory.
- *
- * @since  1.0.0
- *
- * @param  array $paths ACF local JSON open directory.
- */
-add_filter( 'acf/settings/load_json', function ( array $paths ): array {
-	$paths[] = ACF_HERO_SECTION_PATH . 'acf-json';
-
-	return $paths;
-} );
-
-
-
-/**
  * Render ACF hero section after Genesis header.
  *
  * @since 1.0.0
@@ -172,3 +145,45 @@ CSS;
 
 	<?php
 }, 1 );
+
+
+/**
+ * Set ACF local JSON save directory.
+ *
+ * @since  1.0.0
+ *
+ * @param  string $path ACF local JSON save directory.
+ */
+add_filter( 'acf/settings/save_json', function ( string $path ): string {
+	return ACF_HERO_SECTION_PATH . 'acf-json';
+} );
+
+
+/**
+ * Set ACF local JSON load directory.
+ *
+ * @since  1.0.0
+ *
+ * @param  array $paths ACF local JSON open directory.
+ */
+add_filter( 'acf/settings/load_json', function ( array $paths ): array {
+	$paths[] = ACF_HERO_SECTION_PATH . 'acf-json';
+
+	return $paths;
+} );
+
+
+/**
+ * Adds support for ACF Local JSON Manager.
+ *
+ * @link   https://github.com/khromov/acf-local-json-manager
+ *
+ * @since  1.0.0
+ *
+ * @param  array $folders ACF local JSON open directory.
+ */
+add_filter( 'aljm_save_json', function ( array $folders ): array {
+	$folders['ACF Hero Section'] = ACF_HERO_SECTION_PATH . 'acf-json';
+
+	return $folders;
+} );

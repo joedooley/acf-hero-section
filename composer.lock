@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3d9685396b849f7874a4f45bee67b7d",
+    "content-hash": "2060cdd6892a92f5775875ca7ce0d6a6",
     "packages": [
         {
             "name": "composer/installers",
@@ -125,6 +125,30 @@
                 "zikula"
             ],
             "time": "2018-08-27T06:10:37+00:00"
+        },
+        {
+            "name": "khromov/acf-local-json-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/khromov/acf-local-json-manager.git",
+                "reference": "4073c8e30e3fd0d3b252a3a40ee3af61a0b6a109"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/khromov/acf-local-json-manager/zipball/4073c8e30e3fd0d3b252a3a40ee3af61a0b6a109",
+                "reference": "4073c8e30e3fd0d3b252a3a40ee3af61a0b6a109",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "support": {
+                "source": "https://github.com/khromov/acf-local-json-manager/tree/1.2",
+                "issues": "https://github.com/khromov/acf-local-json-manager/issues"
+            },
+            "time": "2016-06-21T13:47:51+00:00"
         }
     ],
     "packages-dev": [
