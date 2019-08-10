@@ -10,7 +10,7 @@ namespace DevDesigns\AcfHeroSection;
  * @since 1.0.0
  */
 add_action( 'genesis_after_header', function (): void {
-	if ( ! is_page_template( 'template-sales.php' ) ) {
+	if ( ! is_page_template( 'template-sales-b.php' ) ) {
 		return;
 	}
 

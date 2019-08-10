@@ -629,7 +629,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "template-sales.php"
+                "value": "template-sales-b.php"
             }
         ]
     ],
@@ -647,5 +647,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1564965646
+    "modified": 1565473091
 }
